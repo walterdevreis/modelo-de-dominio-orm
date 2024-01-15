@@ -2,9 +2,7 @@ package com.devsuperior.modelodedominioorm.entities;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_paticipante")
@@ -59,11 +57,11 @@ public class Participante {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Participante that = (Participante) o;
-        return Objects.equals(id, that.id) && Objects.equals(nome, that.nome) && Objects.equals(email, that.email) && Objects.equals(atividades, that.atividades);
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, email, atividades);
+        return Objects.hash(id);
     }
 }
